@@ -34,9 +34,7 @@ It simulates real-world retail operations, providing functionalities such as **o
 - Frequent customers (more than 2 orders).
 
 ---
-## Installation
 
-1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/mahithareddy01/Retail-Inventory-Order-Management-System-Core-Python.git
@@ -80,3 +78,4 @@ python -m src.cli.main report top-products
 python -m src.cli.main report revenue
 python -m src.cli.main report orders-per-customer
 python -m src.cli.main report frequent-customers
+
