@@ -34,25 +34,49 @@ It simulates real-world retail operations, providing functionalities such as **o
 - Frequent customers (more than 2 orders).
 
 ---
-
 ## Installation
 
 1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/mahithareddy01/Retail-Inventory-Order-Management-System-Core-Python.git
+
 cd Retail-Inventory-Order-Management-System-Core-Python
 
-2.**Install dependencies (if using a virtual environment):**
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
 
+# Set up PostgreSQL database (run SQL scripts in your SQL client)
 
-3.**Set up the PostgreSQL database and create the necessary tables.**
+# Add a product
+python -m src.cli.main product add --name "Laptop" --sku "LP1001" --price 75000 --stock 10 --category "Electronics"
 
-Usage
+# List all products
+python -m src.cli.main product list
 
-Run the CLI using Python:
-```bash
-python -m src.cli.main <module> <action> [options]
+# Add a customer
+python -m src.cli.main customer add --name "John Doe" --email "john@example.com" --phone "1234567890" --city "Hyderabad"
+
+# List all customers
+python -m src.cli.main customer list
+
+# Create an order
+python -m src.cli.main order create --customer 1 --item 1:2 --item 3:1
+
+# Show an order
+python -m src.cli.main order show --order 1
+
+# Cancel an order
+python -m src.cli.main order cancel --order 1
+
+# Process payment
+python -m src.cli.main payment process --order 1 --method card
+
+# Refund payment
+python -m src.cli.main payment refund --order 1
+
+# Generate reports
+python -m src.cli.main report top-products
+python -m src.cli.main report revenue
+python -m src.cli.main report orders-per-customer
+python -m src.cli.main report frequent-customers
